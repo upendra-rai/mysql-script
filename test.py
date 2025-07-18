@@ -85,11 +85,6 @@ df_merged = pd.merge(
 )
 print(f"✅ Step 6 complete: Merged into {len(df_merged)} rows.\n")
 # Safely convert amount to numeric before summing
-total_amount_ismart = pd.to_numeric(df_ismart["amount"], errors='coerce').sum() 
-total_amount_transaction = pd.to_numeric(df_transaction["amount"], errors='coerce').sum() / 100
-
-# Calculate difference
-amount_difference = total_amount_ismart - total_amount_transaction
 
 # Step 7: Convert amount to rupees
 print("Step 7️⃣: Converting amount from paisa to rupees...")
@@ -121,9 +116,7 @@ total_amount = df_filtered["Amount(Rs)"].sum()
 
 print("📊 FINAL REPORT")
 
-print(f"🧾 Total Amount in ismart_create_order: ₹{total_amount_ismart:.2f}")
-print(f"🧾 Total Amount in transaction_details: ₹{total_amount_transaction:.2f}")
-print(f"🔍 Difference: ₹{amount_difference:.2f}\n")
+
 print(f"❌ Total transactions with CallbackStatus NOT SUCCESS: {total_count}")
 print(f"💰 Total Amount of those transactions: ₹{total_amount:.2f}\n")
 
