@@ -55,11 +55,11 @@ def extract_status(callback_json):
         nested_status = data.get("response_message", {}).get("result", {}).get("status")
         if isinstance(nested_status, str):
             return nested_status
-
+        
         # Fallback: top-level status
-        top_status = data.get("status")
-        if isinstance(top_status, str):
-            return top_status
+       # top_status = data.get("status")
+       # if isinstance(top_status, str):
+       #     return top_status
 
     except (json.JSONDecodeError, TypeError):
         return None
