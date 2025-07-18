@@ -31,7 +31,7 @@ print("Step 3️⃣: Fetching data from `transaction_details`...")
 cursor.execute("""
     SELECT id, created, orderid, amount, status
     FROM transaction_details
-    WHERE DATE(created) = '2025-07-16' AND pg_type LIKE 'JODETX%' AND status = 'SUCCESS'
+    WHERE DATE(created) = '2025-07-16' AND pg_type LIKE 'JODETX%' AND status = 'FAILED'
 """)
 df_transaction = pd.DataFrame(cursor.fetchall())
 print(f"✅ Step 3 complete: Fetched {len(df_transaction)} rows from `transaction_details`.\n")
