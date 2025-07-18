@@ -21,7 +21,7 @@ print("Step 2️⃣: Fetching data from `ismart_create_order`...")
 cursor.execute("""
     SELECT id, amount, callback_json, created, order_id
     FROM ismart_create_order
-    WHERE DATE(created) = '2025-07-16' and pg_name LIKE 'JODETX%'
+    WHERE DATE(created) = '2025-07-17' and pg_name LIKE 'JODETX%'
 """)
 df_ismart = pd.DataFrame(cursor.fetchall())
 print(f"✅ Step 2 complete: Fetched {len(df_ismart)} rows from `ismart_create_order`.\n")
@@ -31,7 +31,7 @@ print("Step 3️⃣: Fetching data from `transaction_details`...")
 cursor.execute("""
     SELECT id, created, orderid, amount, status
     FROM transaction_details
-    WHERE DATE(created) = '2025-07-16' and pg_type like 'JODETX%'
+    WHERE DATE(created) = '2025-07-17' and pg_type like 'JODETX%'
 """)
 df_transaction = pd.DataFrame(cursor.fetchall())
 print(f"✅ Step 3 complete: Fetched {len(df_transaction)} rows from `transaction_details`.\n")
