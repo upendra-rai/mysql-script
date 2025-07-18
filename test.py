@@ -9,8 +9,8 @@ print("Step 1️⃣: Connecting to MySQL database...")
 connection = mysql.connector.connect(
     host='localhost',
     port=3306,
-    user='root',
-    password='rootroot',
+    user='pg_user',
+    password='Dst0ao88lfxHnkHLkQd5Hf',
     database='pgdb'
 )
 cursor = connection.cursor(dictionary=True)
