@@ -107,7 +107,7 @@ print(f"✅ Step 9 complete: Found {len(df_filtered)} records.\n")
 # Step 🔟: Save filtered data to CSV
 print("Step 🔟: Saving filtered transactions to CSV...")
 ###########Need to uncomment ###########
-#df_filtered.to_csv("non_success_callback_transactions.csv", index=False)
+df_filtered.to_csv("non_success_callback_transactions.csv", index=False)
 print("✅ Step 10 complete: Saved to 'non_success_callback_transactions.csv'.\n")
 
 # Final Report
